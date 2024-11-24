@@ -1,0 +1,27 @@
+{
+  "name": "cash-register",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "It's a repo where we refactor the cash-register project to add more, smaller jumps in difficulty so apprentices can reach milestones and feel encouraged.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "test:1a": "mocha ./test/1a.test.js",
+    "test:1b": "mocha ./test/1b.test.js",
+    "test:2a": "mocha ./test/2a.test.js",
+    "test:2b": "mocha ./test/2b.test.js",
+    "test:3a": "mocha ./test/3a.test.js",
+    "test:3b": "mocha ./test/3b.test.js",
+    "test:level-1": "mocha ./test/level-1.test.js",
+    "test:level-2": "mocha ./test/level-2.test.js",
+    "test:level-3": "mocha ./test/level-3.test.js",
+    "test:level-4": "mocha ./test/level-4.test.js",
+    "test:level-5": "mocha ./test/level-5.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.4.0"
+  }
+}

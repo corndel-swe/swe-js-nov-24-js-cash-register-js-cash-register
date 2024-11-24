@@ -1,0 +1,80 @@
+name: Autograding Tests
+'on':
+  - push
+  - repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Exercise 1a
+        id: exercise-1a
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Exercise 1a
+          setup-command: npm install
+          command: npm run test:1a
+          timeout: 1
+          max-score: 1
+      - name: Exercise 1b
+        id: exercise-1b
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Exercise 1b
+          setup-command: npm install
+          command: npm run test:1b
+          timeout: 1
+          max-score: 1
+      - name: Exercise 2a
+        id: exercise-2a
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Exercise 2a
+          setup-command: npm install
+          command: npm run test:2a
+          timeout: 1
+          max-score: 1
+      - name: Exercise 2b
+        id: exercise-2b
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Exercise 2b
+          setup-command: npm install
+          command: npm run test:2b
+          timeout: 1
+          max-score: 1
+      - name: Exercise 3a
+        id: exercise-3a
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Exercise 3a
+          setup-command: npm install
+          command: npm run test:3a
+          timeout: 1
+          max-score: 1
+      - name: Exercise 3b
+        id: exercise-3b
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Exercise 3b
+          setup-command: npm install
+          command: npm run test:3b
+          timeout: 1
+          max-score: 1
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          EXERCISE-1A_RESULTS: '${{steps.exercise-1a.outputs.result}}'
+          EXERCISE-1B_RESULTS: '${{steps.exercise-1b.outputs.result}}'
+          EXERCISE-2A_RESULTS: '${{steps.exercise-2a.outputs.result}}'
+          EXERCISE-2B_RESULTS: '${{steps.exercise-2b.outputs.result}}'
+          EXERCISE-3A_RESULTS: '${{steps.exercise-3a.outputs.result}}'
+          EXERCISE-3B_RESULTS: '${{steps.exercise-3b.outputs.result}}'
+        with:
+          runners: exercise-1a,exercise-1b,exercise-2a,exercise-2b,exercise-3a,exercise-3b
