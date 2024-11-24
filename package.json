@@ -1,0 +1,20 @@
+{
+  "name": "cash-register",
+  "version": "1.0.0",
+  "description": "It's a repo where we refactor the cash-register project to add more, smaller jumps in difficulty so apprentices can reach milestones and feel encouraged.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:1": "jest ./challenges/level1.test.js",
+    "test:2": "jest ./challenges/level2.test.js",
+    "test:3": "jest ./challenges/level3.test.js",
+    "test:4": "jest ./challenges/level4.test.js",
+    "test:5": "jest ./challenges/level5.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.6.1"
+  }
+}
